@@ -1,6 +1,6 @@
 {
   "name": "spritez",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple sprite implementation to draw into any canvas.",
   "main": "src/sprite.ts",
   "scripts": {
