@@ -1,5 +1,5 @@
-import { AnimationConfig } from './animationConfig';
-import { SpriteConfig } from './spriteConfig';
+import { AnimationConfig } from './configs/animationConfig';
+import { SpriteConfig } from './configs/spriteConfig';
 
 const DEFAULT_NAME = 'NAME_NOT_CONFIGURED';
 
