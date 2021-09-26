@@ -1,5 +1,5 @@
 # Spritez
-Simple sprite implementation to draw into any canvas. This is just my playground with browser canvas animations, there are plenty other mature implementations available or frameworks for gaming development, consider searching for them if you want to use them for real.
+Simple sprite implementation to draw into any canvas. This is just my playground with browser canvas animations, there are plenty other mature implementations available or frameworks for gaming development, consider searching for them if you are in a real game dev situation.
 
 ## Requirements
 - Node v10 or higher;
