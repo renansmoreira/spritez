@@ -4,7 +4,7 @@ class SampleGame {
   private _canvas: HTMLCanvasElement;
   private _ghoul: Sprite;
   private _redHood: Sprite;
-  private _cedar: Sprite;
+  private _tree: Sprite;
 
   constructor() {
     this._canvas = document.getElementById('gameCanvas') as unknown as HTMLCanvasElement;
@@ -49,8 +49,8 @@ class SampleGame {
         height: 50
       },
       position: {
-        x: 210,
-        y: 210
+        x: 310,
+        y: 310
       },
       defaultAnimation: 'stand_left',
       animations: {
@@ -96,12 +96,12 @@ class SampleGame {
         }
       }
     });
-    this._cedar = new Sprite({
-      name: 'Cedar',
+    this._tree = new Sprite({
+      name: 'Tree',
       show: true,
       drawImage: {
-        width: 50,
-        height: 300
+        width: 100,
+        height: 100
       },
       position: {
         x: 150,
@@ -114,9 +114,9 @@ class SampleGame {
           maxFrames: 0,
           framesToChangeSprite: 20,
           image: {
-            src: './samples/assets/cedar.png',
-            width: 32,
-            height: 150
+            src: './samples/assets/tree.png',
+            width: 48,
+            height: 48
           }
         }
       }
@@ -136,7 +136,7 @@ class SampleGame {
     );
     this._ghoul.update(this._canvas.getContext('2d'));
     this._redHood.update(this._canvas.getContext('2d'));
-    this._cedar.update(this._canvas.getContext('2d'));
+    this._tree.update(this._canvas.getContext('2d'));
   }
 }
 
