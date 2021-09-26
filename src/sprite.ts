@@ -8,6 +8,7 @@ export class Sprite {
   private _config: SpriteConfig;
   private _image: HTMLImageElement;
   private _frameCount: number;
+  private _activeAnimationName: string;
   private _activeAnimation: AnimationConfig;
   private _actualFrame: number;
 
@@ -15,10 +16,15 @@ export class Sprite {
     this._config = { ...config };
     this._image = new Image();
     this._frameCount = 0;
+    this._activeAnimationName = config.defaultAnimation;
     this._activeAnimation = config.animations[config.defaultAnimation];
     this._actualFrame = this._activeAnimation.startFrame;
 
     this.updateImage();
+  }
+
+  get currentAnimationName(): string {
+    return this._activeAnimationName;
   }
 
   private updateImage(): void {
@@ -39,8 +45,11 @@ export class Sprite {
       return;
     }
 
-    this._activeAnimation = this._config.animations[animationName];
-    this.updateImage();
+    if (this._activeAnimationName !== animationName) {
+      this._activeAnimationName = animationName;
+      this._activeAnimation = this._config.animations[animationName];
+      this.updateImage();
+    }
   }
 
   update(canvas: CanvasRenderingContext2D): void {
