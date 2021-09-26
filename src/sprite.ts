@@ -1,4 +1,5 @@
 import { AnimationConfig } from './configs/animationConfig';
+import { Position } from './configs/position';
 import { SpriteConfig } from './configs/spriteConfig';
 
 const DEFAULT_NAME = 'NAME_NOT_CONFIGURED';
@@ -28,7 +29,11 @@ export class Sprite {
     this._config.show = false;
   }
 
-  change(animationName: string): void {
+  changePosition(newPosition: Position): void {
+    this._config.position = newPosition;
+  }
+
+  changeAnimation(animationName: string): void {
     if (!this._config.animations[animationName]) {
       console.info(`No animation named "${animationName}" was found for "${this._config.name || DEFAULT_NAME}".`);
       return;

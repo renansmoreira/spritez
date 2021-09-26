@@ -1,15 +1,15 @@
 {
   "name": "spritez",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Simple sprite implementation to draw into any canvas.",
+  "main": "src/sprite.ts",
   "scripts": {
     "samples": "npx browser-sync start --server --index ./samples/index.html --files ./samples/*",
     "dev": "npx webpack --config webpack.config.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["animation", "canvas", "game"],
+  "author": "Renan S Moreira",
   "license": "MIT",
   "dependencies": {
     "typescript": "^4.3.4"

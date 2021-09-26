@@ -124,7 +124,11 @@ class SampleGame {
   }
 
   changeSprite(spriteName: string, animationName: string) {
-    this[spriteName].change(animationName);
+    this[spriteName].changeAnimation(animationName);
+  }
+
+  changePosition(spriteName: string, x: number, y: number) {
+    this[spriteName].changePosition({ x, y });
   }
 
   update() {
