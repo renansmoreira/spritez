@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #584747;
+        }
+
+        canvas {
+            background-color: #a4a1a1;
+        }
+
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+        <h3>Ghoul</h3>
+        <button type="button" onclick="game.changeSprite('_ghoul', 'stand_left')">Stand left</button>
+        <button type="button" onclick="game.changeSprite('_ghoul', 'stand_right')">Stand right</button>
+
+        <h3>Red hood</h3>
+        <button type="button" onclick="game.changeSprite('_redHood', 'stand_left')">Stand left</button>
+        <button type="button" onclick="game.changeSprite('_redHood', 'stand_right')">Stand right</button>
+        <button type="button" onclick="game.changeSprite('_redHood', 'walk_left')">Walk left</button>
+        <button type="button" onclick="game.changeSprite('_redHood', 'walk_right')">Walk right</button>
+
+        <h3>Cedar (invalid animation info showed in console)</h3>
+        <button type="button" onclick="game.changeSprite('_cedar', 'invalid_animation_name')">Invalid change</button>
+    </div>
+    <script src="./samples/sample.js" type="text/javascript"></script>
+</body>
+
+</html>
