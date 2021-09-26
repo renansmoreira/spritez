@@ -1,6 +1,11 @@
 # Spritez
 Simple sprite implementation to draw into any canvas. This is just my playground with browser canvas animations, there are plenty other mature implementations available or frameworks for gaming development, consider searching for them if you want to use them for real.
 
+## Requirements
+- Node v10 or higher;
+- NPM v6 or higher.
+
+
 ## Features
 - Multi sprite support;
 - Only one instance is necessary for different animations of the same object;
