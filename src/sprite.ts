@@ -9,6 +9,7 @@ export class Sprite {
   private _image: HTMLImageElement;
   private _frameCount: number;
   private _activeAnimationName: string;
+  private _previousAnimationName: string;
   private _activeAnimation: AnimationConfig;
   private _actualFrame: number;
 
@@ -20,15 +21,26 @@ export class Sprite {
     this._activeAnimation = config.animations[config.defaultAnimation];
     this._actualFrame = this._activeAnimation.startFrame;
 
-    this.updateImage();
+    this._updateImage();
   }
 
   get currentAnimationName(): string {
     return this._activeAnimationName;
   }
 
-  private updateImage(): void {
+  private _updateImage(): void {
     this._image.src = this._activeAnimation.image.src;
+    this._frameCount = 0;
+    this._actualFrame = this._activeAnimation.startFrame;
+  }
+
+  private _validateAnimationName(animationName: string): boolean {
+    const animationExists = this._config.animations[animationName] !== undefined;
+
+    if (!animationExists)
+      console.info(`No animation named "${animationName}" was found for "${this._config.name || DEFAULT_NAME}".`);
+
+    return animationExists;
   }
 
   hide(): void {
@@ -40,16 +52,24 @@ export class Sprite {
   }
 
   changeAnimation(animationName: string): void {
-    if (!this._config.animations[animationName]) {
-      console.info(`No animation named "${animationName}" was found for "${this._config.name || DEFAULT_NAME}".`);
+    if (!this._validateAnimationName(animationName)) {
       return;
     }
 
     if (this._activeAnimationName !== animationName) {
       this._activeAnimationName = animationName;
       this._activeAnimation = this._config.animations[animationName];
-      this.updateImage();
+      this._updateImage();
     }
+  }
+
+  playAnimation(animationName: string): void {
+    if (!this._validateAnimationName(animationName)) {
+      return;
+    }
+
+    this._previousAnimationName = this._activeAnimationName;
+    this.changeAnimation(animationName);
   }
 
   update(canvas: CanvasRenderingContext2D): void {
@@ -61,9 +81,16 @@ export class Sprite {
     if (this._frameCount >= this._activeAnimation.framesToChangeSprite) {
       this._frameCount = 0;
 
-      this._actualFrame = this._actualFrame < this._activeAnimation.maxFrames
-        ? this._actualFrame + 1
-        : this._activeAnimation.startFrame;
+      if (this._actualFrame < this._activeAnimation.maxFrames)
+        this._actualFrame = this._actualFrame + 1
+      else {
+        this._actualFrame = this._activeAnimation.startFrame;
+
+        if (this._previousAnimationName) {
+          this.changeAnimation(this._previousAnimationName);
+          this._previousAnimationName = undefined;
+        }
+      }
     }
 
     canvas.drawImage(
