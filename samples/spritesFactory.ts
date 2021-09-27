@@ -4,10 +4,6 @@ export class SpritesFactory {
   createRedHood(): Sprite {
     return new Sprite({
       show: true,
-      drawImage: {
-        width: 40,
-        height: 50
-      },
       position: {
         x: 310,
         y: 310
@@ -15,6 +11,10 @@ export class SpritesFactory {
       defaultAnimation: 'stand_left',
       animations: {
         'stand_left': {
+          drawImage: {
+            width: 40,
+            height: 50
+          },
           startFrame: 0,
           maxFrames: 0,
           framesToChangeSprite: 3,
@@ -25,6 +25,10 @@ export class SpritesFactory {
           }
         },
         'stand_right': {
+          drawImage: {
+            width: 40,
+            height: 50
+          },
           startFrame: 0,
           maxFrames: 0,
           framesToChangeSprite: 3,
@@ -35,6 +39,10 @@ export class SpritesFactory {
           }
         },
         'walk_left': {
+          drawImage: {
+            width: 40,
+            height: 50
+          },
           startFrame: 1,
           maxFrames: 24,
           framesToChangeSprite: 3,
@@ -45,6 +53,10 @@ export class SpritesFactory {
           }
         },
         'walk_right': {
+          drawImage: {
+            width: 40,
+            height: 50
+          },
           startFrame: 1,
           maxFrames: 24,
           framesToChangeSprite: 3,
@@ -61,10 +73,6 @@ export class SpritesFactory {
   createGhoul(): Sprite {
     return new Sprite({
       show: true,
-      drawImage: {
-        width: 50,
-        height: 40
-      },
       position: {
         x: 80,
         y: 80
@@ -72,6 +80,10 @@ export class SpritesFactory {
       defaultAnimation: 'stand_right',
       animations: {
         'stand_left': {
+          drawImage: {
+            width: 50,
+            height: 40
+          },
           startFrame: 0,
           maxFrames: 2,
           framesToChangeSprite: 20,
@@ -82,6 +94,10 @@ export class SpritesFactory {
           }
         },
         'stand_right': {
+          drawImage: {
+            width: 50,
+            height: 40
+          },
           startFrame: 0,
           maxFrames: 2,
           framesToChangeSprite: 20,
@@ -92,6 +108,10 @@ export class SpritesFactory {
           }
         },
         'death': {
+          drawImage: {
+            width: 54,
+            height: 40
+          },
           startFrame: 0,
           maxFrames: 4,
           framesToChangeSprite: 10,
@@ -109,10 +129,6 @@ export class SpritesFactory {
     return new Sprite({
       name: 'Tree',
       show: true,
-      drawImage: {
-        width: 100,
-        height: 100
-      },
       position: {
         x: 150,
         y: 150
@@ -120,6 +136,10 @@ export class SpritesFactory {
       defaultAnimation: 'static',
       animations: {
         'static': {
+          drawImage: {
+            width: 100,
+            height: 100
+          },
           startFrame: 0,
           maxFrames: 0,
           framesToChangeSprite: 20,

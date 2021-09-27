@@ -101,8 +101,8 @@ export class Sprite {
       this._activeAnimation.image.height,
       this._config.position.x,
       this._config.position.y,
-      this._config.drawImage.width,
-      this._config.drawImage.height
+      this._activeAnimation.drawImage.width,
+      this._activeAnimation.drawImage.height
     );
   }
 }
