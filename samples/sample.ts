@@ -29,8 +29,8 @@ class SampleGame {
     this[spriteName].changePosition({ x, y });
   }
 
-  playAnimation(spriteName: string, animationName: string): void {
-    this[spriteName].playAnimation(animationName);
+  playAnimation(spriteName: string, animationName: string, amountOfFramesToSleepOnFinish: number): void {
+    this[spriteName].playAnimation(animationName, amountOfFramesToSleepOnFinish);
   }
 
   update() {
