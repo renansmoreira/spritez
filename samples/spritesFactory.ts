@@ -3,6 +3,7 @@ import { Sprite } from '../src/sprite';
 export class SpritesFactory {
   createRedHood(): Sprite {
     return new Sprite({
+      name: 'Red hood',
       show: true,
       position: {
         x: 310,
@@ -125,13 +126,12 @@ export class SpritesFactory {
     });
   };
 
-  createTree(): Sprite {
+  createTree(position: { x: number, y: number }): Sprite {
     return new Sprite({
-      name: 'Tree',
       show: true,
       position: {
-        x: 150,
-        y: 150
+        x: position.x,
+        y: position.y
       },
       defaultAnimation: 'static',
       animations: {

@@ -5,7 +5,7 @@ class SampleGame {
   private _canvas: HTMLCanvasElement;
   private _ghoul: Sprite;
   private _redHood: Sprite;
-  private _tree: Sprite;
+  private _trees: Sprite[];
 
   constructor(
     private _spritesFactory: SpritesFactory = new SpritesFactory()
@@ -13,14 +13,19 @@ class SampleGame {
     this._canvas = document.getElementById('gameCanvas') as unknown as HTMLCanvasElement;
     this._ghoul = this._spritesFactory.createGhoul();
     this._redHood = this._spritesFactory.createRedHood();
-    this._tree = this._spritesFactory.createTree();
+    this._trees = [
+      this._spritesFactory.createTree({ x: 200, y: 20 }),
+      this._spritesFactory.createTree({ x: 280, y: 80 }),
+      this._spritesFactory.createTree({ x: 30, y: 280 }),
+      this._spritesFactory.createTree({ x: 150, y: 150 })
+    ];
   }
 
-  changeSprite(spriteName: string, animationName: string):void {
+  changeSprite(spriteName: string, animationName: string): void {
     this[spriteName].changeAnimation(animationName);
   }
 
-  changePosition(spriteName: string, x: number, y: number):void {
+  changePosition(spriteName: string, x: number, y: number): void {
     this[spriteName].changePosition({ x, y });
   }
 
@@ -37,7 +42,7 @@ class SampleGame {
     );
     this._ghoul.update(this._canvas.getContext('2d'));
     this._redHood.update(this._canvas.getContext('2d'));
-    this._tree.update(this._canvas.getContext('2d'));
+    this._trees.forEach((t: Sprite) => t.update(this._canvas.getContext('2d')));
   }
 }
 
