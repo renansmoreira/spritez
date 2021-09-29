@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.4.1
+        with:
+          node-version: 14.17.6
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Node.js dependencies install
+        run: npm install
+        
+      - name: Typescript build
+        run: npm run build
+        
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          # A file, directory or wildcard pattern that describes what to upload
+          path: src/
+          if-no-files-found: error
+          retention-days: 1
