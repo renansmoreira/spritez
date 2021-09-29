@@ -1,8 +1,11 @@
 {
+  "include": ["./src/**/*.ts"],
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "sourceMap": true
+    "sourceMap": true,
+    "declaration": true,
+    "emitDeclarationOnly": true
   },
   "exclude": [
     "node_modules"
