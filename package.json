@@ -3,9 +3,11 @@
   "version": "0.1.1",
   "description": "Simple sprite implementation to draw into any canvas.",
   "main": "src/sprite.ts",
+  "types": "src/sprite.d.ts",
   "scripts": {
     "samples": "npx browser-sync start --server --index ./samples/index.html --files ./samples/*",
     "dev": "npx webpack --config webpack.config.js --watch",
+    "build": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
