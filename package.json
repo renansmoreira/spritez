@@ -10,6 +10,10 @@
     "build": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/renansmoreira/spritez.git"
+  },
   "keywords": [
     "animation",
     "canvas",
@@ -17,6 +21,10 @@
   ],
   "author": "Renan S Moreira",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/renansmoreira/spritez/issues"
+  },
+  "homepage": "https://github.com/renansmoreira/spritez",
   "dependencies": {
     "typescript": "^4.3.4"
   },
