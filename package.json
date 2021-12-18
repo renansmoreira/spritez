@@ -25,6 +25,9 @@
     "url": "https://github.com/renansmoreira/spritez/issues"
   },
   "homepage": "https://github.com/renansmoreira/spritez",
+  "publishConfig": {
+    "@renansiravegna:registry": "https://npm.pkg.github.com"
+  },
   "dependencies": {
     "typescript": "^4.3.4"
   },
