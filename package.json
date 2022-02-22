@@ -5,7 +5,6 @@
   "main": "lib/sprite.js",
   "types": "lib/sprite.d.ts",
   "scripts": {
-    "samples": "npx browser-sync start --server --index ./samples/index.html --files ./samples/*",
     "dev": "npx webpack --config webpack.config.js --watch",
     "build": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -29,12 +28,11 @@
     "@renansiravegna:registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
-    "typescript": "^4.3.4"
+    "typescript": "^4.5.5"
   },
   "devDependencies": {
-    "browser-sync": "^2.27.5",
-    "ts-loader": "^9.2.5",
-    "webpack": "^5.53.0",
-    "webpack-cli": "^4.8.0"
+    "ts-loader": "^9.2.6",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2"
   }
 }
