@@ -2,8 +2,8 @@
   "name": "spritez",
   "version": "0.2.0",
   "description": "Simple sprite implementation to draw into any canvas.",
-  "main": "src/sprite.ts",
-  "types": "src/sprite.d.ts",
+  "main": "lib/sprite.js",
+  "types": "lib/sprite.d.ts",
   "scripts": {
     "samples": "npx browser-sync start --server --index ./samples/index.html --files ./samples/*",
     "dev": "npx webpack --config webpack.config.js --watch",
