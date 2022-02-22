@@ -1,6 +1,6 @@
 {
   "name": "spritez",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Simple sprite implementation to draw into any canvas.",
   "main": "lib/sprite.js",
   "types": "lib/sprite.d.ts",
